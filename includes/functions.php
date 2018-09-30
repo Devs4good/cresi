@@ -15,3 +15,12 @@ function db() {
 
   return $db;
 }
+
+function validate_session() {
+  if ( User::getLoggedUser( db() ) ) {
+    return true;
+  }
+
+  header( 'Location:register.html' );
+  exit;
+}

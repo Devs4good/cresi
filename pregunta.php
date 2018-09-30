@@ -1,6 +1,7 @@
 <?php
 namespace Cresi;
 require dirname( __FILE__ ) . '/bootstrap.php';
+validate_session();
 
 if ( ! isset( $_SESSION['vidas'] ) ) {
   $_SESSION['vidas'] = 3;

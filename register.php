@@ -1,6 +1,5 @@
 <?php
 namespace Cresi;
-
 require dirname( __FILE__ ) . '/bootstrap.php';
 
 if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) && isset( $_POST['email'] ) ) {
@@ -17,4 +16,4 @@ if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) && isset( $_POST
   }
 }
 
-header( 'Location:register.html' );
+validate_session();
