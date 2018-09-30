@@ -34,7 +34,7 @@ if ( ! isset( $_SESSION['correctas'] ) ) {
 
 
 <body>
-	<div id="fb-root"></div>
+  <div id="fb-root"></div>
 		<script>(function(d, s, id) {
   		var js, fjs = d.getElementsByTagName(s)[0];
   		if (d.getElementById(id)) return;
@@ -133,6 +133,11 @@ if ( ! isset( $_SESSION['correctas'] ) ) {
   <div class="reloj">
     <p class="cont h3" id="contador">15</p>
   </div>
+
+  <a href="https://m.facebook.com/cresiApp"><img src="img/fb.png" width="30" height="30" alt="facebook"></a>
+
+  <a href="https://instagram.com/appcresi?utm_source=ig_profile_share&igshid=1bga34dmw1krm"><img src="img/ig.png" width="35" height="35" alt="instagram"></a>
+
 
 	<div class="fb-share-button" data-href="Http://cresi.d4g.online" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=Http%3A%2F%2Fcresi.d4g.online%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
 
