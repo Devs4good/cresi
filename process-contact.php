@@ -27,6 +27,8 @@ $email = new Email( [
 if ( $email->fromEmail && count( $email->to ) && $email->subject && $email->body ) {
   $email->send();
 
-  header('Location:contacto.html');
+  $_SESSION['contact_message'] = 'El mensaje se envió correctamente.';
+
+  header('Location:contacto.php');
   exit;
 }
