@@ -1,7 +1,7 @@
-function Respuesta(opcion, correcto) {
+function Respuesta(opcion, correcto, id) {
 	if (opcion==correcto)
 	{
-  	window.location.assign("correcto.php");
+  	window.location.assign("correcto.php?id=" + id);
   	}
 else
 	{

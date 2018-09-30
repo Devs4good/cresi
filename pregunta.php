@@ -8,7 +8,18 @@ if ( ! isset( $_SESSION['vidas'] ) ) {
 }
 
 $vidas = isset( $_SESSION['vidas'] ) ? $_SESSION['vidas'] : 0;
+
+if ( ! isset( $_SESSION['correctas'] ) ) {
+  $_SESSION['correctas'][]=null;                 //array de resp. correctas
+}
+
+	if ( ! isset( $_SESSION['c'] ) ) {			//indice del array
+	  $_SESSION['c'] = 0;
+}
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +30,27 @@ $vidas = isset( $_SESSION['vidas'] ) ? $_SESSION['vidas'] : 0;
   <link rel="stylesheet" href="css/estilos.css">
   <title>Document</title>
 </head>
+
+
+
 <body>
+	<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+  		var js, fjs = d.getElementsByTagName(s)[0];
+  		if (d.getElementById(id)) return;
+  			js = d.createElement(s); js.id = id;
+  			js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.1';
+  			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+
+	<a href="https://m.facebook.com/cresiApp">Ir a Facebook</a>
+	<a href="https://instagram.com/appcresi?utm_source=ig_profile_share&igshid=1bga34dmw1krm">Ir a Instagram</a>
+
+
+
+
   <?php
+  	$i=0;
     $opcion1="";
     $opcion2="";
     $opcion3="";
@@ -35,36 +65,38 @@ $vidas = isset( $_SESSION['vidas'] ) ? $_SESSION['vidas'] : 0;
     // echo $id_pregunta;
     // var_dump($datos);
 
-    if ($reg = mysqli_fetch_array($datos)) {
+   	 		if ($reg = mysqli_fetch_array($datos)) {
+
+
       // var_dump($reg);
-      $respuesta_correcta = $reg['respuestaCorrecta'];
-      switch (rand(1,4)) {
-        case 1:
-          $opcion1 = $reg['respuesta1'];
-          $opcion2 = $reg['respuesta2'];
-          $opcion3 = $reg['respuesta3'];
-          $opcion4 = $respuesta_correcta;
-          break;
-        case 2:
-          $opcion1 = $reg['respuesta1'];
-          $opcion2 = $reg['respuesta2'];
-          $opcion3 = $respuesta_correcta;
-          $opcion4 = $reg['respuesta3'];
-          break;
-        case 3:
-          $opcion1 = $reg['respuesta1'];
-          $opcion2 = $respuesta_correcta;
-          $opcion3 = $reg['respuesta2'];
-          $opcion4 = $reg['respuesta3'];
-          break;
-        case 4:
-          $opcion1 = $respuesta_correcta;
-          $opcion2 = $reg['respuesta1'];
-          $opcion3 = $reg['respuesta2'];
-          $opcion4 = $reg['respuesta3'];
-          break;
-      }
-    }
+      		$respuesta_correcta = $reg['respuestaCorrecta'];
+     			 switch (rand(1,4)) {
+       				 case 1:
+         			 	$opcion1 = $reg['respuesta1'];
+        	 		 	$opcion2 = $reg['respuesta2'];
+        			 	$opcion3 = $reg['respuesta3'];
+        	 		 	$opcion4 = $respuesta_correcta;
+        	 		 	break;
+        			case 2:
+        	  			$opcion1 = $reg['respuesta1'];
+        	 			$opcion2 = $reg['respuesta2'];
+        	  			$opcion3 = $respuesta_correcta;
+        	  			$opcion4 = $reg['respuesta3'];
+        	  			break;
+        			case 3:
+        	 		 	$opcion1 = $reg['respuesta1'];
+        	  			$opcion2 = $respuesta_correcta;
+        	  			$opcion3 = $reg['respuesta2'];
+        	  			$opcion4 = $reg['respuesta3'];
+        	  			break;
+       		 		case 4:
+        	  			$opcion1 = $respuesta_correcta;
+        	  			$opcion2 = $reg['respuesta1'];
+        	  			$opcion3 = $reg['respuesta2'];
+        	 			$opcion4 = $reg['respuesta3'];
+        	  			break;
+     	 			}
+     		 }
   ?>
 
 
@@ -80,16 +112,16 @@ $vidas = isset( $_SESSION['vidas'] ) ? $_SESSION['vidas'] : 0;
 
 
   <div class="opciones">
-    <button class="btn btn-opcion btn-success btn-lg" onclick="Respuesta('<?php echo $opcion1; ?>', '<?php echo $respuesta_correcta; ?>')" ><?php echo $opcion1; ?></button>
+    <button class="btn btn-opcion btn-success btn-lg" onclick="Respuesta('<?php echo $opcion1; ?>', '<?php echo $respuesta_correcta; ?>', '<?php echo $reg['idpregunta']; ?>')" ><?php echo $opcion1; ?></button>
     <br>
 
-    <button class="btn btn-opcion btn-success btn-lg" onclick="Respuesta('<?php echo $opcion2; ?>', '<?php echo $respuesta_correcta; ?>')" ><?php echo $opcion2; ?></button>
+    <button class="btn btn-opcion btn-success btn-lg" onclick="Respuesta('<?php echo $opcion2; ?>', '<?php echo $respuesta_correcta; ?>', '<?php echo $reg['idpregunta']; ?>')" ><?php echo $opcion2; ?></button>
     <br>
 
-    <button class="btn btn-opcion btn-success btn-lg" onclick="Respuesta('<?php echo $opcion3; ?>', '<?php echo $respuesta_correcta; ?>')" ><?php echo $opcion3; ?></button>
+    <button class="btn btn-opcion btn-success btn-lg" onclick="Respuesta('<?php echo $opcion3; ?>', '<?php echo $respuesta_correcta; ?>', '<?php echo $reg['idpregunta']; ?>')" ><?php echo $opcion3; ?></button>
     <br>
 
-    <button class="btn btn-opcion btn-success btn-lg" onclick="Respuesta('<?php echo $opcion4; ?>', '<?php echo $respuesta_correcta; ?>')" ><?php echo $opcion4; ?></button>
+    <button class="btn btn-opcion btn-success btn-lg" onclick="Respuesta('<?php echo $opcion4; ?>', '<?php echo $respuesta_correcta; ?>', '<?php echo $reg['idpregunta']; ?>')" ><?php echo $opcion4; ?></button>
     <br>
 
 
@@ -97,6 +129,9 @@ $vidas = isset( $_SESSION['vidas'] ) ? $_SESSION['vidas'] : 0;
   <div class="reloj">
     <p class="cont h3" id="contador">15</p>
   </div>
+
+	<div class="fb-share-button" data-href="Http://cresi.d4g.online" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=Http%3A%2F%2Fcresi.d4g.online%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
+
   <script src="js/jquery.js" charset="utf-8"></script>
   <script src="js/bootstrap.min.js" charset="utf-8"></script>
   <script src="js/preguntas.js" charset="utf-8"></script>

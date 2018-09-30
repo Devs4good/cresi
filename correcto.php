@@ -2,6 +2,10 @@
 namespace Cresi;
 require dirname( __FILE__ ) . '/bootstrap.php';
 // $_SESSION['correctas'][$i] = $id_pregunta;        //terminar //contador de respuestas correctas respondidas
+if ( isset( $_GET['id'] ) ) {
+  $user = User::getLoggedUser( db() );
+  $user->addProgress( $_GET['id'] );  
+}
 ?>
 
 

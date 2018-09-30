@@ -14,7 +14,16 @@ class User extends StandardEntity {
 
   const COOKIE_NAME = 'cresiLoginCookie';
 
-  public function getProgress() {}
+  public function getProgress() {
+    return unserialize( $this->progress );
+  }
+
+  public function addProgress( $id ) {
+    $progress = $this->getProgress() ? : [];
+    $progress[] = $id;
+    $this->progress = serialize( $progress );
+    $this->db->query( "UPDATE users SET progress = '$this->progress' WHERE id = '$this->id'" );
+  }
 
   public static function validateLogin( $username, $password, $db ) {
     $hashed_password = md5( $password );
