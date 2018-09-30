@@ -1,0 +1,26 @@
+.title{
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-style: oblique;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.formulario{
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.txt{
+  width: 100%;
+  height: 200px;
+  border-style:solid;
+  border-color: #000;
+}
+ .alerta{
+   margin-left: 15%;
+   margin-right: 15%;
+   text-align: center;
+   margin-top: 10px;
+ }

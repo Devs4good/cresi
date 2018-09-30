@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body{
+  background-color: #0ccbf7;
+}
+
+
+.logo{
+  text-align: center;
+  margin-top:20px;
+}
+
+.boton{
+  margin-top: 260px;
+  font-size: 30px;
+  color:#FFF;
+  border-style: solid;
+  border-color: #000;
+  font-weight:bolder;
+}
+
+.header{
+  background-image: url("../img/barrasuperior.png");
+  background-size: cover;
+  height: 70px;
+}
+
+
+.icono{
+  padding-top: 5px;
+}
+
+.icono2{
+  margin-left: 135px;
+  padding-top: 5px;
+}
+
+.ruleta{
+  text-align: center;
+  margin-top: 80px;
+}
+
+.selector{
+  font-size: 25px;
+}
+
+.cartelera{
+  font-size: 60px;
+  text-align: center;
+  margin-top: 80px;
+  color: #000;
+}
+
+.categoria{
+  background-color: rgb(232, 226, 225);
+}
+
+.pregunta{
+  margin: 2%;
+  background-color: #fffffa;
+  border-radius: 5px;
+}
+
+.texto_pregunta{
+  font-weight: bold;
+  font-size: 25px;
+  font-style: oblique;
+}
+
+.pregunta .jumbotron{
+  text-align: center;
+  font-family: 'Open Sans' , sans-serif;
+  height: 100%;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+.opciones{
+  text-align: center;
+  display: block;
+}
+
+.btn-opcion{
+  margin:10px;
+  width: 80%;
+}
+
+.reloj{
+  text-align: center;
+  margin-top: 60px;
+}
+
+.cont{
+  font-family: 'Open Sans' , sans-serif;
+}
+
+.respuesta{
+  background-color: #fff;
+  margin: 5%;
+  border-radius: 5pc;
+}
+
+.incorrecto{
+  font-size: 50px;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 20px;
+  color: #cd3231;
+  font-weight: bold;
+}
+
+.vida{
+  float: right;
+  font-size: 25px;
+  margin-right: 35px;
+  padding: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+  font-style: oblique;
+}
