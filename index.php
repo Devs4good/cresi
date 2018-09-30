@@ -1,6 +1,7 @@
 <?php
 namespace Cresi;
 require dirname( __FILE__ ) . '/bootstrap.php';
+validate_session();
 ?>
 <!DOCTYPE html>
 <html lang="en">
