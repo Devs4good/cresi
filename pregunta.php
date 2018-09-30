@@ -59,7 +59,11 @@ if ( ! isset( $_SESSION['correctas'] ) ) {
     $id_pregunta=rand(1,248);
     $conexion = db()->link;
     $categoria = $_GET['categoria'];
-    $query = "SELECT * FROM pregunta WHERE categoria = '$categoria' ORDER BY RAND() LIMIT 0,1";
+    if ( $categoria === '¿Qué es?' ) {
+      $query = "SELECT * FROM pregunta ORDER BY RAND() LIMIT 0,1";
+    } else {
+      $query = "SELECT * FROM pregunta WHERE categoria = '$categoria' ORDER BY RAND() LIMIT 0,1";
+    }
     // echo $query;
     $datos = mysqli_query($conexion, $query);
     // echo $id_pregunta;
