@@ -4,13 +4,6 @@ require dirname( __FILE__ ) . '/bootstrap.php';
 
 $contactData = [ 'name', 'email', 'subject', 'message' ];
 
-$_POST = [
-  'name' => 'Andres',
-  'email' => 'andrezrv@gmail.com',
-  'subject' => 'Tengo una duda',
-  'message' => 'Testeando...',
-];
-
 foreach ( $contactData as $dataKey ) {
   if ( ! isset( $_POST[ $dataKey ] ) ) {
     return;
