@@ -7,7 +7,7 @@ $_SESSION['vidas']--;
 
 if ( $_SESSION['vidas'] === 0 ) {
   unset( $_SESSION['vidas'] );
-  header('Location:index.php');          // reemplazar index.html con una pagina de "perdiste quieres volver a jugar?"
+  header('Location:perdiste.html');
 }
 
 ?>
